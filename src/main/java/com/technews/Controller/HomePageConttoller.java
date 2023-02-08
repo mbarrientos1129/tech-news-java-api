@@ -1,5 +1,6 @@
 package com.technews.Controller;
 
+import com.technews.model.Comment;
 import com.technews.model.Post;
 import com.technews.model.User;
 import com.technews.repository.CommentRepository;
@@ -56,7 +57,7 @@ public class HomePageConttoller {
             sessionUser = (User) request.getSession().getAttribute("SESSION_USER");
             model.addAttribute("loggedIN", sessionUser.isLoggedIn());
         }else {
-            model.addAttribute("loggedIn", flase);
+            model.addAttribute("loggedIn", false);
         }
 
         List<Post> postList = postRepository.findAll();
